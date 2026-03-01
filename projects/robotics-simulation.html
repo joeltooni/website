@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <title>Robotics Simulation Environment - Joel Adebayo</title>
+
+    <!-- Common meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/media/icons/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/media/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/media/icons/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/media/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../assets/media/icons/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="../assets/media/icons/android-chrome-512x512.png"
+    />
+    <link rel="manifest" href="../assets/media/icons/site.webmanifest" />
+
+    <!-- Tailwind CSS with shared configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <!-- Theme initialization -->
+    <script src="../assets/js/theme-init.js"></script>
+  </head>
+  <body class="text-gray-800">
+    <!-- Header -->
+    <div id="header-container" data-depth="1"></div>
+    <script src="../assets/js/header-loader.js"></script>
+
+    <!-- Main Content -->
+    <main class="container mx-auto pt-[42px] lg:pt-[50px] pb-8 px-4 lg:px-20">
+      <!-- Back Button -->
+      <div class="mb-6">
+        <a
+          href="../projects.html"
+          class="text-blue-600 dark:text-blue-400 hover:underline"
+        >
+          <i class="fas fa-arrow-left mr-2"></i>Back to Projects
+        </a>
+      </div>
+
+      <!-- Project Title -->
+      <h1 class="text-4xl font-bold mb-4">Robotics Simulation Environment</h1>
+
+      <!-- Project Meta -->
+      <div class="mb-6">
+        <p class="text-xl text-gray-700 dark:text-gray-300">Lab Project</p>
+        <p class="text-lg italic text-gray-600 dark:text-gray-400 mt-2">
+          Developed a simulation in Gazebo for testing pathfinding algorithms.
+        </p>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="mb-6">
+        <div class="flex flex-wrap gap-2">
+          <span class="tech-tag tech-tag-blue">Gazebo</span>
+          <span class="tech-tag tech-tag-green">ROS</span>
+          <span class="tech-tag tech-tag-yellow">C++</span>
+          <span class="tech-tag tech-tag-purple">Robotics</span>
+          <span class="tech-tag tech-tag-red">Pathfinding</span>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="flex space-x-4 mb-8 text-lg">
+        <a href="#" class="link-style"
+          ><i class="fab fa-github mr-2"></i>GitHub</a
+        >
+      </div>
+
+      <!-- Featured Image -->
+      <div class="mb-8">
+        <img
+          src="../assets/media/images/projects/project-5.jpg"
+          alt="Project screenshot"
+          class="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+        />
+      </div>
+
+      <!-- Overview -->
+      <section class="section-container p-6 rounded-lg shadow-md mb-8">
+        <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
+        <p class="leading-relaxed text-justify">
+          [Describe the robotics simulation environment, its purpose, and the
+          problems it helps solve. Explain what types of robots and scenarios
+          can be simulated.]
+        </p>
+      </section>
+
+      <!-- Key Features -->
+      <section class="section-container p-6 rounded-lg shadow-md mb-8">
+        <h2 class="text-2xl font-bold mb-4">Key Features</h2>
+        <ul class="list-disc list-inside space-y-2 text-lg">
+          <li>3D simulation environment in Gazebo</li>
+          <li>Multiple pathfinding algorithm implementations</li>
+          <li>ROS integration for robot control</li>
+          <li>Obstacle detection and avoidance</li>
+          <li>Performance metrics and visualization</li>
+          <li>Customizable robot models and environments</li>
+        </ul>
+      </section>
+
+      <!-- Technical Implementation -->
+      <section class="section-container p-6 rounded-lg shadow-md mb-8">
+        <h2 class="text-2xl font-bold mb-4">Technical Implementation</h2>
+        <p class="leading-relaxed mb-4">
+          [Describe the technical architecture, how ROS nodes communicate,
+          sensor integrations, and the pathfinding algorithms implemented.]
+        </p>
+        <h3 class="text-xl font-semibold mb-2 mt-4">Pathfinding Algorithms</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>A* (A-star) algorithm</li>
+          <li>Dijkstra's algorithm</li>
+          <li>RRT (Rapidly-exploring Random Tree)</li>
+          <li>Dynamic obstacle avoidance</li>
+        </ul>
+      </section>
+
+      <!-- Simulation Environments -->
+      <section class="section-container p-6 rounded-lg shadow-md mb-8">
+        <h2 class="text-2xl font-bold mb-4">Simulation Environments</h2>
+        <p class="leading-relaxed mb-4">
+          [Describe the different environments created for testing, including
+          indoor spaces, outdoor scenarios, and various obstacle
+          configurations.]
+        </p>
+      </section>
+
+      <!-- Results -->
+      <section class="section-container p-6 rounded-lg shadow-md mb-8">
+        <h2 class="text-2xl font-bold mb-4">Results & Performance</h2>
+        <p class="leading-relaxed">
+          [Include performance comparisons between different pathfinding
+          algorithms, success rates, computation times, and path efficiency
+          metrics.]
+        </p>
+      </section>
+
+      <!-- Future Work -->
+      <section class="section-container p-6 rounded-lg shadow-md mb-8">
+        <h2 class="text-2xl font-bold mb-4">Future Enhancements</h2>
+        <ul class="list-disc list-inside space-y-2 text-lg">
+          <li>Integration with real robot hardware</li>
+          <li>Multi-robot coordination scenarios</li>
+          <li>Machine learning-based path optimization</li>
+          <li>More complex environmental dynamics</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container" data-depth="1"></div>
+    <script src="../assets/js/footer-loader.js"></script>
+  </body>
+</html>

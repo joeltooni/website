@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <title>Camera Calibration Visualization - Joel Adebayo</title>
+
+    <!-- Common meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/media/icons/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/media/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/media/icons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/media/icons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/media/icons/android-chrome-512x512.png" />
+    <link rel="manifest" href="../assets/media/icons/site.webmanifest" />
+
+    <!-- Tailwind CSS with shared configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <!-- Theme initialization -->
+    <script src="../assets/js/theme-init.js"></script>
+  </head>
+  <body class="text-gray-800">
+    <!-- Header -->
+    <div id="header-container" data-depth="1"></div>
+    <script src="../assets/js/header-loader.js"></script>
+
+    <!-- Main Content -->
+    <main class="container mx-auto pt-[42px] lg:pt-[50px] pb-8 px-4 lg:px-20">
+      <!-- Breadcrumb -->
+      <nav class="mb-6 text-sm">
+        <a href="../resources.html" class="link-style">Resources</a>
+        <span class="mx-2 text-gray-500">/</span>
+        <span class="text-gray-600 dark:text-gray-400">Camera Calibration Visualization</span>
+      </nav>
+
+      <h1 class="section-title">Camera Calibration Visualization</h1>
+      
+      <div class="section-container p-6 rounded-lg shadow-md mb-8">
+        <p class="text-lg mb-6">
+          An interactive tool for understanding the camera calibration process and lens distortion correction.
+        </p>
+
+        <!-- Demo placeholder -->
+        <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 min-h-[400px] flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600">
+          <div class="text-center">
+            <i class="fas fa-chess-board text-6xl text-gray-400 mb-4"></i>
+            <p class="text-xl text-gray-500 dark:text-gray-400">Camera Calibration Visualization Demo</p>
+            <p class="text-gray-400 dark:text-gray-500 mt-2">Interactive content coming soon</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description Section -->
+      <section class="section-container p-6 rounded-lg shadow-md mb-8">
+        <h2 class="text-2xl font-bold mb-4">About This Visualization</h2>
+        <p class="leading-relaxed mb-4">
+          This tool demonstrates the camera calibration process using checkerboard patterns. 
+          Learn about:
+        </p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>Checkerboard corner detection</li>
+          <li>Lens distortion models (radial and tangential)</li>
+          <li>Distortion coefficient estimation</li>
+          <li>Image undistortion techniques</li>
+          <li>Reprojection error analysis</li>
+        </ul>
+      </section>
+
+      <!-- Back to Resources -->
+      <div class="mt-8">
+        <a href="../resources.html" class="inline-flex items-center link-style">
+          <i class="fas fa-arrow-left mr-2"></i>
+          Back to Resources
+        </a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container" data-depth="1"></div>
+    <script src="../assets/js/footer-loader.js"></script>
+  </body>
+</html>

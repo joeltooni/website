@@ -1,0 +1,705 @@
+body {
+    font-family: Georgia, serif;
+    background-color: #f8fafc;
+    color: #1f2937;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark body {
+    background-color: #111827;
+    color: #d1d5db;
+}
+
+/* Header Navigation Styles - Always Dark Theme */
+.nav-item {
+    position: relative;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover::after {
+    transform: translateX(-50%) scaleX(0);
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    border-radius: 6px;
+}
+
+.nav-item.active::after {
+    transform: translateX(-50%) scaleX(0) !important;
+}
+
+.mobile-nav-item.active {
+    background: rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+}
+
+.mobile-nav-item:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Improved section title colors */
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    color: #1f2937; /* Better contrast in light mode */
+}
+
+.dark .section-title {
+    color: #f9fafb;
+    border-bottom-color: #374151;
+}
+
+/* Header improvements */
+header {
+    background-color: #ffffff;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dark header {
+    background-color: #1f2937e0;
+    backdrop-filter: blur(8px);
+    border-bottom-color: #374151;
+}
+
+/* Ensure header is always visible and sticky */
+#header-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    min-height: 70px;
+    height: 70px;
+    max-height: 70px;
+    transform: none;
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#header-container:empty {
+    background: linear-gradient(to right, 
+        rgba(55, 65, 81, 0.05), 
+        rgba(55, 65, 81, 0.02), 
+        rgba(55, 65, 81, 0.05)
+    );
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+#header-container:not(:empty) {
+    height: auto;
+    max-height: none;
+}
+
+.dark #header-container:empty {
+    background: linear-gradient(to right, 
+        rgba(31, 41, 55, 0.1), 
+        rgba(31, 41, 55, 0.05), 
+        rgba(31, 41, 55, 0.1)
+    );
+    border-bottom-color: rgba(55, 65, 81, 0.5);
+}
+
+/* Brand name styling */
+.brand-name {
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.dark .brand-name {
+    color: #f9fafb;
+}
+
+.brand-name:hover {
+    color: #3b82f6;
+}
+
+.dark .brand-name:hover {
+    color: #60a5fa;
+}
+
+/* Simple Mobile Menu Styles (No Accordion) */
+.accordion-menu {
+    background: linear-gradient(to right, rgba(55, 65, 81, 0.95), rgba(31, 41, 55, 0.98), rgba(17, 24, 39, 1));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: none; /* Hidden on desktop */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+.accordion-menu.active {
+    max-height: 400px; /* Adjust based on your content */
+}
+
+/* Simple menu items */
+.simple-menu-item {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1.2rem 2rem;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+}
+
+.simple-menu-item:last-child {
+    border-bottom: none;
+}
+
+.simple-menu-item:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    padding-left: 2.5rem;
+}
+
+/* Mobile Menu Button Styles */
+.accordion-menu-btn {
+    display: none; /* Hidden by default on desktop */
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #f9fafb;
+    font-size: 1.2rem;
+}
+
+.accordion-menu-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Show mobile menu on mobile */
+@media (max-width: 768px) {
+    .accordion-menu-btn {
+        display: flex;
+    }
+    
+    .accordion-menu {
+        display: block;
+    }
+}
+
+/* Dark mode adjustments */
+.dark .accordion-menu {
+    background: linear-gradient(to right, rgba(55, 65, 81, 0.95), rgba(31, 41, 55, 0.98), rgba(17, 24, 39, 1));
+}
+
+.dark .simple-menu-item:hover {
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+}
+
+/* Simple menu items (no sub-items) */
+.simple-menu-item {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1.2rem 2rem;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.simple-menu-item:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    padding-left: 2.5rem;
+}
+
+/* Dark mode adjustments for accordion */
+.dark .accordion-menu {
+    background: linear-gradient(to right, rgba(55, 65, 81, 0.95), rgba(31, 41, 55, 0.98), rgba(17, 24, 39, 1));
+}
+
+.dark .accordion-header:hover {
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+}
+
+.dark .accordion-content a:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #93c5fd;
+}
+
+.dark .simple-menu-item:hover {
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+}
+
+/* Section containers with better colors and enhanced padding */
+.section-container {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    padding: 2rem;
+}
+
+.dark .section-container {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+/* Scrollable news section */
+.news-scroll {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.news-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.news-scroll::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.news-scroll::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.news-scroll::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.dark .news-scroll::-webkit-scrollbar-track {
+    background: #334155;
+}
+
+.dark .news-scroll::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+.dark .news-scroll::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Improved desktop padding with more generous and uniform spacing */
+@media (min-width: 640px) {
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+}
+
+/* Enhanced main content spacing */
+main {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    main {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+/* Section title spacing */
+.section-title {
+    margin-bottom: 2rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Other existing styles */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+.dark footer {
+    background-color: #1f2937;
+    border-top-color: #374151;
+}
+
+.item-divider {
+    border-color: #e5e7eb;
+}
+
+.dark .item-divider {
+    border-color: #374151;
+}
+
+.link-style {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.link-style:hover {
+    color: #1d4ed8;
+}
+
+.dark .link-style {
+    color: #60a5fa;
+}
+
+.dark .link-style:hover {
+    color: #93c5fd;
+}
+
+/* Theme switch styles */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    .theme-switch-wrapper {
+        padding: 0;
+        margin: 0;
+        border: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 32px;
+    position: relative;
+    width: 58px;
+    margin: 0;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #e2e8f0;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.3s ease;
+    border-radius: 32px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+
+.dark .slider {
+    background-color: #374151;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slider:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dark .slider:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.slider:before {
+    background-color: #ffffff;
+    bottom: 3px;
+    content: "";
+    height: 26px;
+    left: 3px;
+    position: absolute;
+    transition: all 0.3s ease;
+    width: 26px;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: none;
+    outline: none;
+}
+
+.dark .slider:before {
+    background-color: #1f2937;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: #1f2937;
+}
+
+.dark input:checked + .slider:before {
+    background-color: #ffffff;
+}
+
+.slider .sun-icon, .slider .moon-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 14px;
+    height: 14px;
+    transition: all 0.3s ease;
+}
+
+.slider .sun-icon {
+    left: 7px;
+    color: #f59e0b;
+    opacity: 1;
+}
+
+.slider .moon-icon {
+    right: 7px;
+    color: #6b7280;
+    opacity: 1;
+}
+
+.dark .slider .sun-icon {
+    opacity: 0.5;
+}
+
+.dark .slider .moon-icon {
+    color: #d1d5db;
+    opacity: 1;
+}
+
+input:checked + .slider .sun-icon {
+    opacity: 0.5;
+}
+
+input:checked + .slider .moon-icon {
+    opacity: 1;
+}
+
+/* Social media icons hover effects */
+.text-gray-500:hover i.fab.fa-github { color: #333; }
+.dark .text-gray-500:hover i.fab.fa-github { color: #fff; }
+.text-gray-500:hover i.fab.fa-linkedin { color: #0077B5; }
+.text-gray-500:hover i.fas.fa-graduation-cap { color: #4285F4; }
+a[href*="x.com"]:hover span { color: #000000 !important; }
+.dark a[href*="x.com"]:hover span { color: #ffffff !important; }
+.text-gray-500:hover i.fab.fa-instagram { 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Ensure consistent theme toggle styling across all devices */
+.theme-switch,
+.theme-switch * {
+    box-sizing: border-box;
+}
+
+.theme-switch .slider:before {
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+}
+
+/* Force consistent rendering on mobile devices */
+@media (max-width: 768px) {
+    html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    body {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+        min-width: 320px;
+    }
+    
+    .theme-switch .slider {
+        border-radius: 32px;
+    }
+    
+    .theme-switch .slider:before {
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+    }
+    
+    /* Show mobile menu button only on mobile - FIXED */
+    .mobile-menu-btn {
+        display: flex !important;
+    }
+    
+    /* Mobile font size reductions */
+    .section-title {
+        font-size: 1.5rem; /* Reduced from 1.75rem */
+    }
+    
+    h1 {
+        font-size: 2.5rem !important; /* Reduced from larger sizes */
+    }
+    
+    h2 {
+        font-size: 1.5rem !important; /* Reduced */
+    }
+    
+    h3 {
+        font-size: 1.25rem !important; /* Reduced */
+    }
+    
+    p, .text-lg {
+        font-size: 1rem !important; /* Reduced from 1.125rem */
+    }
+    
+    .text-xl {
+        font-size: 1.125rem !important; /* Reduced from 1.25rem */
+    }
+    
+    .text-2xl {
+        font-size: 1.5rem !important; /* Reduced from 1.5rem */
+    }
+    
+    .text-4xl {
+        font-size: 2rem !important; /* Reduced from 2.25rem */
+    }
+    
+    /* Navigation text size */
+    .nav-item, .mobile-nav-item {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Project tag font size */
+    .text-sm {
+        font-size: 0.8rem !important; /* Reduced from 0.875rem */
+    }
+    
+    /* Button font sizes */
+    button, .bg-blue-500 {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Footer text */
+    footer p, footer a {
+        font-size: 0.875rem !important;
+    }
+    
+    /* Link style font size */
+    .link-style {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Custom technology tag styles - reliable colors */
+.tech-tag {
+    display: inline-block;
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    margin: 0.125rem;
+}
+
+.tech-tag-blue {
+    background-color: #1e3a8a; /* Dark navy blue */
+}
+
+.tech-tag-green {
+    background-color: #14532d; /* Dark forest green */
+}
+
+.tech-tag-purple {
+    background-color: #581c87; /* Dark royal purple */
+}
+
+.tech-tag-yellow {
+    background-color: #92400e; /* Dark amber/brown */
+}
+
+.tech-tag-red {
+    background-color: #991b1b; /* Dark crimson red */
+}
+
+/* Dark mode variants */
+.dark .tech-tag-blue {
+    background-color: #1e40af; /* Slightly lighter dark blue for dark mode */
+}
+
+.dark .tech-tag-green {
+    background-color: #166534; /* Slightly lighter dark green for dark mode */
+}
+
+.dark .tech-tag-purple {
+    background-color: #6b21a8; /* Slightly lighter dark purple for dark mode */
+}
+
+.dark .tech-tag-yellow {
+    background-color: #a16207; /* Slightly lighter dark amber for dark mode */
+}
+
+.dark .tech-tag-red {
+    background-color: #b91c1c; /* Slightly lighter dark red for dark mode */
+}

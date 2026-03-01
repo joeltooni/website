@@ -1,0 +1,46 @@
+<header class="sticky top-0 z-50 bg-gradient-to-r from-gray-800 via-gray-900 to-black shadow-lg">
+  <nav class="container mx-auto py-3 px-4 lg:px-20 flex justify-between items-center">
+    <!-- Brand -->
+    <div class="text-xl font-bold brand-name text-white">
+      <a href="{BASE}home.html" class="text-white hover:text-gray-200 transition-colors">
+        Joel Adebayo
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="flex items-center space-x-4">
+      <div class="hidden md:flex space-x-4">
+        <a href="{BASE}research.html" class="nav-item text-white hover:text-gray-300 transition-colors px-3 py-2 rounded-md relative" data-page="research">Research</a>
+        <a href="{BASE}projects.html" class="nav-item text-white hover:text-gray-300 transition-colors px-3 py-2 rounded-md relative" data-page="projects">Projects</a>
+        <a href="{BASE}others.html" class="nav-item text-white hover:text-gray-300 transition-colors px-3 py-2 rounded-md relative" data-page="others">Others</a>
+        <a href="{BASE}cv.html" class="nav-item text-white hover:text-gray-300 transition-colors px-3 py-2 rounded-md relative" data-page="cv">CV</a>
+        <a href="{BASE}resources.html" class="nav-item text-white hover:text-gray-300 transition-colors px-3 py-2 rounded-md relative" data-page="resources">Resources</a>
+      </div>
+
+      <!-- Theme Toggle Button -->
+      <div class="theme-switch-wrapper order-1 md:order-2">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </div>
+        </label>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="accordion-menu-btn md:hidden order-2 md:order-1" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="accordion-menu">
+    <a href="{BASE}research.html" class="simple-menu-item">Research</a>
+    <a href="{BASE}projects.html" class="simple-menu-item">Projects</a>
+    <a href="{BASE}others.html" class="simple-menu-item">Others</a>
+    <a href="{BASE}cv.html" class="simple-menu-item">CV</a>
+    <a href="{BASE}resources.html" class="simple-menu-item">Resources</a>
+  </div>
+</header>
