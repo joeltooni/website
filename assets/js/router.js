@@ -39,6 +39,7 @@
     const scripts = doc.querySelectorAll('main script, main ~ script:not([src*="footer-loader"])');
 
     return {
+      mainEl: main,
       mainHTML: main ? main.innerHTML : null,
       title: title ? title.textContent : document.title,
       scripts: Array.from(scripts),
@@ -90,7 +91,7 @@
   // Navigate to a new page via content swap
   async function navigateTo(url, pushState = true) {
     try {
-      const { mainHTML, title, scripts } = await fetchPageContent(url);
+      const { mainEl, mainHTML, title, scripts } = await fetchPageContent(url);
 
       if (mainHTML === null) {
         // Fallback: full page load if no <main> found
@@ -98,10 +99,11 @@
         return;
       }
 
-      // Swap content
-      const main = document.querySelector('main');
-      if (main) {
-        main.innerHTML = mainHTML;
+      // Swap the entire <main> element to preserve per-page classes
+      const currentMain = document.querySelector('main');
+      if (currentMain && mainEl) {
+        currentMain.className = mainEl.className;
+        currentMain.innerHTML = mainHTML;
         // Scroll to top
         window.scrollTo({ top: 0, behavior: 'instant' });
       }

@@ -292,7 +292,7 @@ header {
     background: #64748b;
 }
 
-/* Improved desktop padding with more generous and uniform spacing */
+/* Consistent container padding across all breakpoints */
 @media (min-width: 640px) {
     .container {
         padding-left: 2rem;
@@ -309,42 +309,22 @@ header {
 
 @media (min-width: 1024px) {
     .container {
-        padding-left: 6rem;
-        padding-right: 6rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
     }
 }
 
 @media (min-width: 1280px) {
     .container {
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
     }
 }
 
 @media (min-width: 1536px) {
     .container {
-        padding-left: 10rem;
-        padding-right: 10rem;
-    }
-}
-
-/* Enhanced main content spacing */
-main {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-@media (min-width: 768px) {
-    main {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    main {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
+        padding-left: 8rem;
+        padding-right: 8rem;
     }
 }
 
