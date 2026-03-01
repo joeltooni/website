@@ -293,6 +293,10 @@ header {
 }
 
 /* Consistent container padding across all breakpoints */
+.container {
+    max-width: 100% !important;
+}
+
 @media (min-width: 640px) {
     .container {
         padding-left: 2rem;
