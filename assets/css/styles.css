@@ -1,8 +1,19 @@
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: Georgia, serif;
     background-color: #f8fafc;
     color: #1f2937;
     transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 .dark body {
@@ -92,36 +103,11 @@ header {
     left: 0;
     width: 100%;
     z-index: 50;
-    min-height: 70px;
-    height: 70px;
-    max-height: 70px;
-    transform: none;
-    display: block;
-    overflow: hidden;
-    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
-#header-container:empty {
-    background: linear-gradient(to right, 
-        rgba(55, 65, 81, 0.05), 
-        rgba(55, 65, 81, 0.02), 
-        rgba(55, 65, 81, 0.05)
-    );
-    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
-}
-
-#header-container:not(:empty) {
-    height: auto;
-    max-height: none;
-}
-
-.dark #header-container:empty {
-    background: linear-gradient(to right, 
-        rgba(31, 41, 55, 0.1), 
-        rgba(31, 41, 55, 0.05), 
-        rgba(31, 41, 55, 0.1)
-    );
-    border-bottom-color: rgba(55, 65, 81, 0.5);
+#footer-container {
+    flex-shrink: 0;
 }
 
 /* Brand name styling */
