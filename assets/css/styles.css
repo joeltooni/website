@@ -315,22 +315,22 @@ header {
 
 @media (min-width: 1024px) {
     .container {
-        padding-left: 6rem;
-        padding-right: 6rem;
+        padding-left: 12rem;
+        padding-right: 12rem;
     }
 }
 
 @media (min-width: 1280px) {
     .container {
-        padding-left: 8rem;
-        padding-right: 8rem;
+        padding-left: 16rem;
+        padding-right: 16rem;
     }
 }
 
 @media (min-width: 1536px) {
     .container {
-        padding-left: 12rem;
-        padding-right: 12rem;
+        padding-left: 24rem;
+        padding-right: 24rem;
     }
 }
 
